@@ -67,13 +67,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+
+        
         // Find the category with the highest score
         let highestScoreCategory = "frontend";
         if (scores.backend > scores[highestScoreCategory]) {
             highestScoreCategory = "backend";
+            window.location.href = 'be_lecture.html';
         }
-        if (scores.fullstack > scores[highestScoreCategory]) {
+        else if (scores.fullstack > scores[highestScoreCategory]) {
             highestScoreCategory = "fullstack";
+            window.location.href = 'fullstack_lecture.html';
+        }
+        else
+        {
+            window.location.href = 'fe_lecture.html';
         }
 
         // Hide all video categories
